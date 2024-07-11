@@ -1,8 +1,6 @@
 streamlit
-os
 langchain_groq
 langchain
 langchain_core
 langchain_chroma
 dotenv
-time
