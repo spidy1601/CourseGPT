@@ -53,7 +53,7 @@ retriever = SelfQueryRetriever.from_llm(
     search_kwargs={"k": 10},
 )
 
-st.title("Course Transcription AI ChatBot")
+st.title("Course GPT")
 
 prompt = ChatPromptTemplate.from_template(
     """
@@ -71,7 +71,7 @@ document_chain = create_stuff_documents_chain(llm,prompt)
 # retriever = vectors.as_retriever()
 retriever_chain = create_retrieval_chain(retriever,document_chain)
 
-prompt =st.text_input("Input your prompt here")
+prompt =st.text_input("Dive Deeper! What questions do you have about the course videos?")
 
 if prompt:
     start= time.process_time()
@@ -88,5 +88,5 @@ if prompt:
                 st.write(doc.metadata)
                 st.write("---------------------------------------------------------")
     except:
-        st.write("Currently this Question isn't interpreted correctly.")
+        st.write("I am unable to answer that question at this time.")
 
